@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block content%}
+
+<h3>Inicio</h3>
+
+
+
+    {% if request.user.is_authenticated %} 
+    <hr>
+    <h4>{{user.username | title}} Bienvenido!</h4>
+    {% else %}
+    <li><a href="{% url 'login' %}">Ingresar</a></li>
+    {% endif %}
+
+
+
+{% endblock %}
